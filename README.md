@@ -28,6 +28,17 @@ git clone https://github.com/TashaTu/SINanalyzer.git
 cd SINanalyzer
 pip install .
 ```
+Create a virtual environment (optional but recommended)
+```bash
+python3 -m venv env
+source env/bin/activate  # For MacOS/Linux
+# OR
+.\env\Scripts\activate   # For Windows
+```
+Install the package
+```
+pip install .
+```
 
 ## Usage
 Here’s an example to get started with **SiNE**

@@ -25,7 +25,7 @@ To install the package, use the following command:
 
 ```bash
 pip install SINanalyser
-
+```
 
 Alternatively, clone this repository and install locally:
 
@@ -57,7 +57,7 @@ integrated_network_construction.network_construction(case_data=gem,method="SiNE"
 ```
 
 ### Supported Methods
-SiNE: Specify method="SiNE"
-SSN: Specify method="SSN" (requires control data)
-LIONESS: Specify method="LIONESS"
+1. **SiNE**: Specify method="SiNE"
+2. **SSN**: Specify method="SSN" (requires control data)
+3. **LIONESS**: Specify method="LIONESS"
 

@@ -21,20 +21,20 @@ This package is designed to explore individual biological characteristics in com
 
 ## Installation
 
-To install the package, use the following command to clone this repository and install locally:
+1. Use the following command to clone this repository and install locally
 
 ```bash
 git clone https://github.com/TashaTu/SINanalyzer.git
 cd SINanalyzer
 ```
-Create a virtual environment (optional but recommended)
+2. Create a virtual environment (optional but recommended)
 ```bash
 python3 -m venv env
 source env/bin/activate  # For MacOS/Linux
 # OR
 .\env\Scripts\activate   # For Windows
 ```
-Install the package
+3. Install the package
 ```
 pip install .
 ```

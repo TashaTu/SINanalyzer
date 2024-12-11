@@ -21,17 +21,11 @@ This package is designed to explore individual biological characteristics in com
 
 ## Installation
 
-To install the package, use the following command:
+To install the package, use the following command to clone this repository and install locally:
 
 ```bash
-pip install SINanalyser
-```
-
-Alternatively, clone this repository and install locally:
-
-```bash
-git clone https://github.com/username/your-package.git
-cd your-package
+git clone https://github.com/TashaTu/SINanalyzer.git
+cd SINanalyzer
 pip install .
 ```
 

@@ -16,13 +16,13 @@ with open('requirements.txt') as f:
     requirements = f.read().splitlines()
 
 setup(
-    name='SIN_construction',
+    name='SINanalyzer',
     version='0.1',
     packages=find_packages(),
     install_requires=requirements,
     author='Tasha Tu',
-    author_email='tashatu.bt11@nycu.edu.tw',
-    description='A python package to construct single-sample network to analyze individual characteristics.',
+    author_email='dididodo22@gmail.com',
+    description='This package provides comprehensive tools for single-sample network construction, network feature analysis, and network visualization. Users can choose from three distinct methods for network construction: SiNE, SSN, and LIONESS.',
     long_description=read('README.md'),
     long_description_content_type='text/markdown',
     url='',

@@ -61,7 +61,7 @@ integrated_network_construction.network_construction(case_data=gem,method="SiNE"
 ```
 ## Parameters
 
-### Core Parameters:
+### Core Parameters
 
 - **`case_data` (pd.DataFrame)**:  
   A DataFrame containing the case gene expression data. The data should be formatted with genes as rows and samples as columns.  
@@ -82,7 +82,7 @@ integrated_network_construction.network_construction(case_data=gem,method="SiNE"
 - **`pvalue` (float)**:  
   P-value threshold for network construction. Default is `0.05`.
 
-### Additional Parameters:
+### Additional Parameters
 
 - **`gene_set` (list or None)**:  
   A list of genes to focus on. If `None`, all genes in the dataset are used.

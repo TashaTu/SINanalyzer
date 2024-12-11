@@ -26,7 +26,6 @@ To install the package, use the following command to clone this repository and i
 ```bash
 git clone https://github.com/TashaTu/SINanalyzer.git
 cd SINanalyzer
-pip install .
 ```
 Create a virtual environment (optional but recommended)
 ```bash

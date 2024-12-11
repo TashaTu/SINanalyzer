@@ -6,7 +6,7 @@ A toolkit for single-sample network construction, network feature analysis, and 
 
 ## Introduction
 
-This package provides comprehensive tools for constructing single-sample networks (SSNs), analyzing network features, and visualizing networks. It supports three distinct methods for single-sample network construction:
+This package provides comprehensive tools for constructing single-sample networks, analyzing network features, and visualizing networks. It supports three distinct methods for single-sample network construction:
 
 1. **SiNE**: A novel single-sample network inference method developed by our team for constructing targeted gene networks.  
    Reference: [Chen et al., Briefings in Bioinformatics, 2023](https://doi.org/10.1093/bib/bbad032).

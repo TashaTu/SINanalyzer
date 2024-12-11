@@ -57,7 +57,10 @@ integrated_network_construction.network_construction(case_data=gem,method="SiNE"
 ```
 
 ### Supported Methods
-1. **SiNE**: Specify method="SiNE"
-2. **SSN**: Specify method="SSN" (requires control data)
-3. **LIONESS**: Specify method="LIONESS"
+1. **SiNE**: Specify `method="SiNE"`
+2. **SSN**: Specify `method="SSN"` (requires control data)
+3. **LIONESS**: Specify `method="LIONESS"`
+
+### More Details
+For more detailed usage and examples, please refer to the `Package_usage_guide.ipynb` file.
 

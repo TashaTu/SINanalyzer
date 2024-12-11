@@ -49,7 +49,7 @@ import pandas as pd
 gem_path = 'tests/KICH_all.txt'  # Update this path with the location of your GEM file
 gem = pd.read_csv(gem_path, sep='\t', header=0, index_col=0)
 
-# Example: specify a subset of genes (or set to None to include all)
+# Example: Specify gene set and sample list (optional)
 gene_df = pd.read_csv('tests/gene_set_100.txt', sep='\t', header=0, index_col=0)
 gene_set =  list(gene_df.index)
 sample_df = pd.read_csv('tests/sample_list_10.txt', sep='\t', header=0, index_col=0)
@@ -59,11 +59,54 @@ outdir = 'tests/SiNE_SIN'  # Specify an output directory for results
 # Run SiNE with the specified parameters
 integrated_network_construction.network_construction(case_data=gem,method="SiNE",gene_set=gene_set,sample_list=sample_list,outdir=outdir,output_format="npz")
 ```
+## Parameters
 
-### Supported Methods
-1. **SiNE**: Specify `method="SiNE"`
-2. **SSN**: Specify `method="SSN"` (requires control data)
-3. **LIONESS**: Specify `method="LIONESS"`
+### Core Parameters:
+
+- **`case_data` (pd.DataFrame)**:  
+  A DataFrame containing the case gene expression data. The data should be formatted with genes as rows and samples as columns.  
+  **Required**.
+
+- **`control_data` (pd.DataFrame or None)**:  
+  A DataFrame containing the control gene expression data. Only required for the SSN method. If not used, the default is `None`.
+
+- **`method` (str)**:  
+  The network construction method to use. Options are:
+  - `"SiNE"`
+  - `"LIONESS"`
+  - `"SSN"`
+
+- **`amp` (float)**:  
+  Amplitude parameter for SiNE network construction. Default is `0.1`.
+
+- **`pvalue` (float)**:  
+  P-value threshold for network construction. Default is `0.05`.
+
+### Additional Parameters:
+
+- **`gene_set` (list or None)**:  
+  A list of genes to focus on. If `None`, all genes in the dataset are used.
+
+- **`sample_list` (list or None)**:  
+  A list of sample names to include in the output. If `None`, all samples are output.
+
+- **`normalize` (bool)**:  
+  If `True`, the data will be log2 normalized. Default is `False`.
+
+- **`outdir` (str or None)**:  
+  Directory to save the output files. If `None`, the current directory is used.
+
+- **`output_format` (str)**:  
+  Format for output files. Options are:
+  - `"npz"`
+  - `"edge_list"`
+  - `"edge_list_score"`
+  - `"edge_list_zscore"`
+
+### Notes
+
+- This function dynamically adjusts parameters and execution based on the specified method.  
+- Make sure to provide all required inputs, especially when using methods like **SSN**, which require both `case_data` and `control_data`.
 
 ### More Details
 For more detailed usage and examples, please refer to the `Package_usage_guide.ipynb` file.

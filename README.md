@@ -50,9 +50,9 @@ gem_path = 'tests/KICH_all.txt'  # Update this path with the location of your GE
 gem = pd.read_csv(gem_path, sep='\t', header=0, index_col=0)
 
 # Example: Specify gene set and sample list (optional)
-gene_df = pd.read_csv('tests/gene_set_100.txt', sep='\t', header=0, index_col=0)
+gene_df = pd.read_csv('tests/gene_set_100.txt', sep='\t', header=0, index_col=0) # The example file format with a header, so you should set `header=0`.
 gene_set =  list(gene_df.index)
-sample_df = pd.read_csv('tests/sample_list_10.txt', sep='\t', header=0, index_col=0)
+sample_df = pd.read_csv('tests/sample_list_10.txt', sep='\t', header=0, index_col=0) # The example file format with a header, so you should set `header=0`.
 sample_list = list(sample_df.index)
 outdir = 'tests/SiNE_SIN'  # Specify an output directory for results
 

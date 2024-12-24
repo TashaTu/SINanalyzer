@@ -19,7 +19,7 @@ It supports four distinct methods for single-sample network construction:
    Reference: [Liu et al., Nucleic Acids Research, 2016](https://doi.org/10.1093/nar/gkw772).
 4. **LIONESS(Linear Interpolation to Obtain Network Estimates for Single Samples)** is a method for reverse-engineering sample-specific networks from aggregate networks,
    enabling the analysis of network topology changes and heterogeneity.
-   Reference: [Kuijjer et al., iScience, 2019](10.1016/j.isci.2019.03.021).
+   Reference: [Kuijjer et al., iScience, 2019](https://doi.org/10.1016/j.isci.2019.03.021).
 
 This package is designed to explore individual biological characteristics in complex systems and facilitate personalized network-based studies in diseases.
 

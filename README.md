@@ -6,16 +6,19 @@ A toolkit for single-sample network construction, network feature analysis, and 
 
 ## Introduction
 
-This package provides comprehensive tools for constructing single-sample networks, analyzing network features, and visualizing networks. It supports three distinct methods for single-sample network construction:
+This package provides comprehensive tools for constructing single-sample networks, analyzing network features, and visualizing networks. 
+It supports four distinct methods for single-sample network construction:
 
-1. **SiNE**: A novel single-sample subnetwork inference method developed by our team, inspired by our SWEET approach.
-   The primary goal of SiNE is to construct targeted gene networks, enabling the analysis of specific gene interactions at the individual sample level.
+1. **SiNE(Single-Sample subNetwork Extractor)**, inspired by our team's SWEET method, is an efficient approach designed to construct single-sample subnetworks
+   for genes of interest. It significantly reduces computational time and resources while preserving network topology and functional similarity.
+2. **SWEET(Sample-Specific Weighted Correlation Network)** is a novel method for constructing single-sample networks by integrating genome-wide sample-to-sample
+   correlations with differential networks, enabling the characterization of individual features and heterogeneity in diseases.
    Reference: [Chen et al., Briefings in Bioinformatics, 2023](https://doi.org/10.1093/bib/bbad032).
-2. **SWEET**: A single-sample network inference method pioneered by our team, serving as the foundation for SiNE.  
-   Reference: [Chen et al., Briefings in Bioinformatics, 2023](https://doi.org/10.1093/bib/bbad032).
-3. **SSN**: A single-sample network inference method based on the concept introduced by Liu et al., Nucleic Acids Research, 2016.
+3. **SSN(Sample-Specific Network)** is a statistical method for constructing individual-specific networks based on single-sample expression profiles.
+   It facilitates the elucidation of molecular mechanisms underlying complex diseases at the system level.
    Reference: [Liu et al., Nucleic Acids Research, 2016](https://doi.org/10.1093/nar/gkw855).
-4. **LIONESS**: A single-sample network inference method adapted from Kuijjer et al., iScience, 2019.
+4. **LIONESS(Linear Interpolation to Obtain Network Estimates for Single Samples)** is a method for reverse-engineering sample-specific networks from aggregate networks,
+   enabling the analysis of network topology changes and heterogeneity.
    Reference: [Kuijjer et al., iScience, 2019](https://doi.org/10.1016/j.isci.2019.02.032).
 
 This package is designed to explore individual biological characteristics in complex systems and facilitate personalized network-based studies in diseases.

@@ -8,11 +8,14 @@ A toolkit for single-sample network construction, network feature analysis, and 
 
 This package provides comprehensive tools for constructing single-sample networks, analyzing network features, and visualizing networks. It supports three distinct methods for single-sample network construction:
 
-1. **SiNE**: A novel single-sample network inference method developed by our team for constructing targeted gene networks.  
+1. **SiNE**: A novel single-sample subnetwork inference method developed by our team, inspired by our SWEET approach.
+   The primary goal of SiNE is to construct targeted gene networks, enabling the analysis of specific gene interactions at the individual sample level.
    Reference: [Chen et al., Briefings in Bioinformatics, 2023](https://doi.org/10.1093/bib/bbad032).
-2. **SSN**: Based on *Liu et al., Nucleic Acids Research, 2016*.  
+2. **SWEET**: A single-sample network inference method pioneered by our team, serving as the foundation for SiNE.  
+   Reference: [Chen et al., Briefings in Bioinformatics, 2023](https://doi.org/10.1093/bib/bbad032).
+3. **SSN**: A single-sample network inference method based on the concept introduced by Liu et al., Nucleic Acids Research, 2016.
    Reference: [Liu et al., Nucleic Acids Research, 2016](https://doi.org/10.1093/nar/gkw855).
-3. **LIONESS**: Adapted from *Kuijjer et al., iScience, 2019*.  
+4. **LIONESS**: A single-sample network inference method adapted from Kuijjer et al., iScience, 2019.
    Reference: [Kuijjer et al., iScience, 2019](https://doi.org/10.1016/j.isci.2019.02.032).
 
 This package is designed to explore individual biological characteristics in complex systems and facilitate personalized network-based studies in diseases.
@@ -73,11 +76,12 @@ integrated_network_construction.network_construction(case_data=gem,method="SiNE"
 - **`method` (str)**:  
   The network construction method to use. Options are:
   - `"SiNE"`
+  - `"SWEET"`
   - `"LIONESS"`
   - `"SSN"`
 
 - **`amp` (float)**:  
-  Amplitude parameter for SiNE network construction. Default is `0.1`.
+  Amplitude parameter for SiNE and SWEET network construction. Default is `0.1`.
 
 - **`pvalue` (float)**:  
   P-value threshold for network construction. Default is `0.05`.

@@ -117,7 +117,7 @@ def network_construction(case_data, control_data=None, method="SiNE", amp=0.1, p
             SiNE_network(case_data,sample_weight,mean,std,amp=amp,pvalue=pvalue,sample_list=sample_list,outdir=outdir,output_format=output_format)
             
     # SWEET
-    if method == "SWEET":
+    elif method == "SWEET":
         if control_data is not None:
             raise ValueError("Data control should not be provided when method is 'SWEET'.")
         ################################ Sample weight ################################

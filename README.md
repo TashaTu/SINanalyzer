@@ -9,7 +9,7 @@ A toolkit for single-sample network construction, network feature analysis, and 
 This package provides comprehensive tools for constructing single-sample networks, analyzing network features, and visualizing networks. 
 It supports four distinct methods for single-sample network construction:
 
-1. **SiNE(Single-Sample subNetwork Extractor)**, inspired by our team's SWEET method, is an efficient approach designed to construct single-sample subnetworks
+1. **SiNE(Single-Sample subNetwork Extractor)** is an efficient approach, inspired by our team's SWEET method, designed to construct single-sample subnetworks
    for genes of interest. It significantly reduces computational time and resources while preserving network topology and functional similarity.
 2. **SWEET(Sample-Specific Weighted Correlation Network)** is a novel method for constructing single-sample networks by integrating genome-wide sample-to-sample
    correlations with differential networks, enabling the characterization of individual features and heterogeneity in diseases.

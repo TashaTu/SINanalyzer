@@ -17,6 +17,10 @@ from .SiNE.weight import correlation_calculation as SiNE_correlation, weight_cal
 from .SiNE.mean import mean_calculation as SiNE_mean
 from .SiNE.std import std_calculation as SiNE_std
 from .SiNE.network import network_construction as SiNE_network
+from .SWEET.weight import correlation_calculation as SWEET_correlation, weight_calculation as SWEET_weight
+from .SWEET.mean import mean_calculation as SWEET_mean
+from .SWEET.std import std_calculation as SWEET_std
+from .SWEET.network import network_construction as SWEET_network
 from .LIONESS.mean import mean_calculation as LIONESS_mean
 from .LIONESS.std import std_calculation as LIONESS_std
 from .LIONESS.network import network_construction as LIONESS_network
@@ -65,8 +69,8 @@ def network_construction(case_data, control_data=None, method="SiNE", amp=0.1, p
     Parameters:
     case_data (pd.DataFrame): A DataFrame containing the case gene expression data. The data should be formatted with genes as rows and samples as columns.
     control_data (pd.DataFrame or None): A DataFrame containing the control gene expression data (only required for SSN). If not used, default is None.
-    method (str): The network construction method to use. Options are "SiNE", "LIONESS", or "SSN".
-    amp (float): Amplitude parameter for SiNE network construction (default=0.1).
+    method (str): The network construction method to use. Options are "SiNE", "SWEET", "LIONESS", or "SSN".
+    amp (float): Amplitude parameter for SiNE and SWEET network construction (default=0.1).
     pvalue (float): P-value threshold for network construction (default=0.05).
     gene_set (list or None): A list of genes to focus on. If None, all genes in the dataset are used.
     sample_list (list or None): A list of sample names to include in the output. If None, all samples are output.
@@ -111,6 +115,25 @@ def network_construction(case_data, control_data=None, method="SiNE", amp=0.1, p
             mean = SiNE_mean(case_data,sample_weight)
             std = SiNE_std(case_data,sample_weight,mean)
             SiNE_network(case_data,sample_weight,mean,std,amp=amp,pvalue=pvalue,sample_list=sample_list,outdir=outdir,output_format=output_format)
+            
+    # SWEET
+    if method == "SWEET":
+        if control_data is not None:
+            raise ValueError("Data control should not be provided when method is 'SWEET'.")
+        ################################ Sample weight ################################
+        sample_corr, data_sample = SWEET_correlation(case_data)
+        weight_file = f'{outdir}/weight.txt'
+        sample_weight = SWEET_weight(sample_corr,data_sample,weight_file)
+        if gene_set != None:
+            ################################ Mean, Standard, Network ################################
+            mean = SWEET_mean(filter_data,sample_weight)
+            std = SWEET_std(filter_data,sample_weight,mean)
+            SWEET_network(filter_data,sample_weight,mean,std,amp=amp,pvalue=pvalue,sample_list=sample_list,outdir=outdir,output_format=output_format)
+        else:
+            ################################ Mean, Standard, Network ################################
+            mean = SWEET_mean(case_data,sample_weight)
+            std = SWEET_std(case_data,sample_weight,mean)
+            SWEET_network(case_data,sample_weight,mean,std,amp=amp,pvalue=pvalue,sample_list=sample_list,outdir=outdir,output_format=output_format)
     
     # LIONESS
     elif method == "LIONESS":
@@ -141,5 +164,5 @@ def network_construction(case_data, control_data=None, method="SiNE", amp=0.1, p
             ################################ Network ################################    
             SSN_network(case_data,control_data,pvalue=pvalue,sample_list=sample_list,outdir=outdir,output_format=output_format)
     else:
-        raise ValueError("The network construction method must be 'SiNE', 'LIONESS', or 'SSN'")
+        raise ValueError("The network construction method must be 'SiNE', 'SWEET', 'LIONESS', or 'SSN'")
     

@@ -38,7 +38,9 @@ cd SINanalyzer
 python3 -m venv env
 source env/bin/activate  # For MacOS/Linux
 # OR
-.\env\Scripts\activate   # For Windows
+env\Scripts\activate # For Windows (CMD)
+# OR
+.\env\Scripts\activate   # For Windows (Powershell)
 ```
 3. Install the package
 ```

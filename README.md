@@ -6,7 +6,7 @@ A toolkit for single-sample network construction, network feature analysis, and 
 
 ## Introduction
 
-This package provides comprehensive tools for constructing single-sample networks, analyzing network features, and visualizing networks. 
+This package provides comprehensive tools for constructing single-sample networks and visualizing networks. 
 It supports four distinct methods for single-sample network construction:
 
 1. **SiNE(Single-Sample subNetwork Extractor)** is an efficient approach, inspired by our team's SWEET method, designed to construct single-sample subnetworks

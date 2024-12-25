@@ -10,7 +10,7 @@ from setuptools import setup, find_packages
 import os
 
 def read(fname):
-    return open(os.path.join(os.path.dirname(__file__), fname)).read()
+    return open(os.path.join(os.path.dirname(__file__), fname), encoding='utf-8').read()
 
 with open('requirements.txt') as f:
     requirements = f.read().splitlines()
@@ -22,7 +22,7 @@ setup(
     install_requires=requirements,
     author='Tasha Tu',
     author_email='dididodo22@gmail.com',
-    description='This package provides comprehensive tools for single-sample network construction, network feature analysis, and network visualization. Users can choose from three distinct methods for network construction: SiNE, SSN, and LIONESS.',
+    description='This package provides comprehensive tools for single-sample network construction, network feature analysis, and network visualization. Users can choose from three distinct methods for network construction: SiNE, SWEET, SSN, and LIONESS.',
     long_description=read('README.md'),
     long_description_content_type='text/markdown',
     url='',

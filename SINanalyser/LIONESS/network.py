@@ -80,10 +80,12 @@ def network_construction(data_df,mean,std,pvalue=0.05,sample_list=None,outdir=No
             elif output_format == "edge_list_score":
                 with open(f'{outdir}/{sample}_edge_list_score.txt', 'w') as f:
                     for i, j in zip(rows, cols):
-                        f.write(f'{data_gene[i]}\t{data_gene[j]}\t{edge_score[i, j]:.6f}\n')
+                        score_index = data_gene_l*i-(i*(i+1))//2+(j-i-1)
+                        f.write(f'{data_gene[i]}\t{data_gene[j]}\t{edge_score[score_index]:.6f}\n')
 
             elif output_format == "edge_list_zscore":
                 with open(f'{outdir}/{sample}_edge_list_zscore.txt', 'w') as f:
                     for i, j in zip(rows, cols):
-                        f.write(f'{data_gene[i]}\t{data_gene[j]}\t{edge_score_z[i, j]:.6f}\n')
+                        score_index = data_gene_l*i-(i*(i+1))//2+(j-i-1)
+                        f.write(f'{data_gene[i]}\t{data_gene[j]}\t{edge_score_z[score_index]:.6f}\n')
     print('-> Single-sample network construction ... Done')
